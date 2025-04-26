@@ -1,0 +1,23 @@
+
+<div class="product-card">
+    <a class = "image_wapper" [href]="product.link" target="_blank">
+            <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+        </a>
+        <hr>
+        <div class = "product-card-info">
+            <div class = "product-card-name">
+                <a class="product-card-name-link" [href]="product.link" target="_blank">{{ product.name }}</a>
+            </div>
+
+            <p class= "price" [innerHTML]="product.description">{{ product.description }}</p>
+            <p class="rating">Rating: {{ product.rating }} / 5</p>
+
+            <button class = "share-btn whatsapp" (click)="shareOnWhatsApp(product.link)"><i class="fab fa-whatsapp"></i> Share on WhatsApp</button>
+            <br>
+            <button class = "share-btn telegram"(click)="shareOnTelegram(product.link)"><i class="fab fa-telegram-plane"></i> Share on Telegram</button>
+
+
+            <button class="like-btn" (click)="likeProduct()">❤️ Like {{ product.likes }}</button>
+            <button class="remove-btn" (click)="removeProduct()">🗑 Remove</button>
+        </div>
+</div>
